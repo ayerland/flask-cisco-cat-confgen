@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <br>
+    <form action="process" method="post" target="_blank">
+        {% for message in get_flashed_messages() %}
+             <p>{{ message }}</p>
+         {% endfor %}
+        <br>
+        <input type="text" placeholder="Switch Name" name="sw_name" required>
+        <br>
+        <input type="text" placeholder="Mgmt IP Address" name="sw_ip" required>
+        <br>
+        <input type="text" placeholder="Mgmt Netmask" name="sw_netmask" required>
+        <br>
+        <input type="text" placeholder="Mgmt Gateway" name="sw_gateway" required>
+        <br>
+        <input type="text" placeholder="Switch Location" name="sw_location" required>
+        <br>
+        <input type="text" placeholder="Mgmt-Vlan# Eg: 100" name="sw_mgmt_vlan" required>
+        <br>
+        <input type="text" placeholder="VOIP-Vlan# Eg: 200" name="data_voip_vlan" required>
+        <br>
+        <input type="text" placeholder="Auth-Vlan# Eg: 300" name="data_auth_vlan" required>
+        <br>
+        <input type="text" placeholder="GeneralData-Vlan# Eg: 400" name="data_gen_vlan" required>
+        <br><br>
+        <input type="submit" value="SUBMIT" id="process" style="text-align: center;">
+    </form>
+</body>
+</html>
